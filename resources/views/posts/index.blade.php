@@ -3,7 +3,7 @@
   Post-Home
 @endsection
 @section('content')
-  <a href="" class="btn btn-dark">Create a new post</a>
+  <a href="{{route('posts.create')}}" class="btn btn-dark">Create a new post</a>
   <table class="table">
     <thead>
       <tr>
