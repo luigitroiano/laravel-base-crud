@@ -20,9 +20,15 @@
         <td>{{$value->title}}</td>
         <td>{{$value->body}}</td>
         <td>
-          <a href="">View</a>
-          <a href="">Edit</a>
-          <a href="">Delete</a>
+          <a href="{{route('posts.show',['post'=>$value->id])}}">View</a>
+          <a href="{{route('posts.edit',['post'=>$value->id])}}">Edit</a>
+          <form action="{{route('posts.destroy',['post'=>$value->id])}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button><a style="color: red">Delete</a></button>
+            
+          </form>
+          
         </td>
       </tr>
       @empty
